@@ -1,0 +1,95 @@
+.notesPane {
+  position: sticky;
+  top: 14px;
+}
+
+@media (max-width: 920px) {
+  .notesPane {
+    position: relative;
+    top: 0;
+  }
+}
+
+.notesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 290px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+@media (max-width: 920px) {
+  .notesList {
+    max-height: 340px;
+  }
+}
+
+.noteRow {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(100, 116, 139, 0.28);
+  background:
+    linear-gradient(180deg, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0.7));
+  border-radius: 14px;
+  padding: 10px 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(17, 24, 39, 0.14);
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.noteRow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 rgba(17, 24, 39, 0.14);
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.noteRowActive {
+  border-color: rgba(6, 182, 212, 0.7);
+  box-shadow: 0 5px 0 rgba(6, 182, 212, 0.25);
+  background:
+    linear-gradient(180deg, rgba(6, 182, 212, 0.13), rgba(255, 255, 255, 0.75));
+}
+
+.noteRowTop {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.noteRowTitle {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.noteRowTime {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.noteRowPreview {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.35;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.emptyState {
+  padding: 12px;
+  border: 1px dashed rgba(100, 116, 139, 0.35);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.editorPane .field {
+  background: rgba(255, 255, 255, 0.82);
+}
